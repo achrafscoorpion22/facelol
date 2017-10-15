@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import Header from "./component/header.js";
-import { Button } from "react-bootstrap";
+import Header from "./component/header";
 
 import "./App.css";
 

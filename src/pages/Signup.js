@@ -21,7 +21,7 @@ export default class Signup extends Component {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .catch(error => {
-        this.setState({ error: "error" });
+        this.setState({ error: "err" });
       });
 
     window.firebase.auth().onAuthStateChanged(user => {
