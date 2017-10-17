@@ -47,8 +47,12 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
-        <Form horizontal>
+     
+      <div className="form-1"  >
+        <h1>  Shadow Login Form </h1>
+        
+        <Form horizontal >
+          
           <FormGroup controlId="formHorizontalEmail">
             <Col componentClass={ControlLabel} sm={2}>
               Email
@@ -88,6 +92,7 @@ export default class Login extends Component {
           </FormGroup>
         </Form>
       </div>
+      
     );
   }
 }
