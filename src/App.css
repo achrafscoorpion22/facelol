@@ -39,9 +39,9 @@ input[type=text]:focus {
 }
 .form-1 {
   /* Size & position */
-  width: 450px;
-  margin: 60px 6px 300px;
-  padding: 80px;
+  width: 40%;
+  margin: 10px 10px 200px;
+  padding: 6px 6px 80px 10px;
   position: relative; /* For the submit button positioning */
 
   /* Styles */
@@ -53,4 +53,62 @@ input[type=text]:focus {
   border-radius: 5px;
   background:transparent; /* Fallback */
 
+}
+.form-2{
+  
+  text-align: center;
+  
+
+}
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+.form-4 {
+ 
+  /* Size and position */
+  width: 300px;
+  margin: 60px auto 30px;
+  padding:  10px 180px 10px 180px;
+  position: relative;
+
+  /* Font styles */
+  font-family: 'Raleway', 'Lato', Arial, sans-serif;
+  color: linear-gradient(to right, #000000 , rgb(255, 255, 255));
+  text-shadow: 0 2px 1px rgba(22, 0, 121, 0.3);
+}
+.form-5 {
+  /* Width and position */
+  width: 100%;
+  padding: 8px 5px;
+
+  /* Styles */
+  border: 1px solid #0273dd; /* Fallback */
+  border: 1px solid rgba(0,0,0,0.4);
+  box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.3),
+      inset 0 10px 10px rgba(255,255,255,0.1);
+  border-radius: 3px;
+  background: #38a6f0;
+  cursor:pointer;
+
+  /* Font styles */
+  font-family: 'Ubuntu', 'Lato', sans-serif;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+}
+
+.form-5 :hover { 
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.form-5 :active { 
+  background: #287db5;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.6);
+  border-color: #000; /* Fallback */
+  border-color: rgba(0,0,0,0.9);
 }

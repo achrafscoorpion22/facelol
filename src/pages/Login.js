@@ -49,10 +49,13 @@ export default class Login extends Component {
     return (
      
       <div className="form-1"  >
-        <h1>  Shadow Login Form </h1>
-        
+      <br/>
+      <br/>
+        <h1 className="form-2">  Shadow Login Form </h1>
+        <br/>
+        <br/>
         <Form horizontal >
-          
+        
           <FormGroup controlId="formHorizontalEmail">
             <Col componentClass={ControlLabel} sm={2}>
               Email
@@ -65,7 +68,8 @@ export default class Login extends Component {
               />
             </Col>
           </FormGroup>
-
+          <br/>
+      
           <FormGroup controlId="formHorizontalPassword">
             <Col componentClass={ControlLabel} sm={2}>
               Password
@@ -78,16 +82,18 @@ export default class Login extends Component {
               />
             </Col>
           </FormGroup>
-
+          <br/>
+        
           <FormGroup>
             <Col smOffset={2} sm={10}>
               <Checkbox>Remember me</Checkbox>
             </Col>
           </FormGroup>
-
+          <br/>
+          <br/>
           <FormGroup>
             <Col smOffset={2} sm={10}>
-              <Button onClick={this.handleClick}>Sign in</Button>
+              <Button className="form-5" onClick={this.handleClick} >  Sign in</Button>
             </Col>
           </FormGroup>
         </Form>
