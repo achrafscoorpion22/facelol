@@ -8,14 +8,22 @@ import {
   Nav
 } from "react-bootstrap";
 import { Link } from "react-router";
+import * as firebase from "firebase";
 export default class Header extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      x: ""
+      user: firebase.auth().currentUser,
+      userid: ""
     };
   }
+  componentWillMount() {
+    if (this.state.user) {
+      this.setState({ userid: "profile/" + this.state.user.uid });
+    }
+  }
+
   render() {
     return (
       <div className="headercss">
@@ -38,7 +46,7 @@ export default class Header extends Component {
                 <Link to="/">accueil</Link>
               </li>
               <li className="dropdown">
-                <Link to="/profile/26512">profile</Link>
+                <Link to={this.state.userid}>profile</Link>
               </li>
 
               <NavDropdown eventKey={3} title="Setting" id="basic-nav-dropdown">

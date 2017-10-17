@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class Profile extends Component {
-    render() {
-        return (
-            <div>
-                {this.props.params.id}
-            </div>
-        )
-    }
+  render() {
+    return <div>{this.props.params.id}</div>;
+  }
 }
