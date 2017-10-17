@@ -8,6 +8,7 @@ import {
   ControlLabel,
   FormControl
 } from "react-bootstrap";
+import * as firebase from "firebase";
 export default class Signup extends Component {
   state = {
     email: "",
@@ -17,14 +18,14 @@ export default class Signup extends Component {
 
   handleClick = () => {
     const { email, password } = this.state;
-    window.firebase
+    firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .catch(error => {
         this.setState({ error: "err" });
       });
 
-    window.firebase.auth().onAuthStateChanged(user => {
+    firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.props.router.push("/");
       }
@@ -40,6 +41,7 @@ export default class Signup extends Component {
   render() {
     return (
       <div>
+        <h1>Sign Up</h1>
         <Form horizontal>
           <FormGroup controlId="formHorizontalEmail">
             <Col componentClass={ControlLabel} sm={2}>
@@ -75,7 +77,7 @@ export default class Signup extends Component {
 
           <FormGroup>
             <Col smOffset={2} sm={10}>
-              <Button onClick={this.handleClick}>Sign in</Button>
+              <Button onClick={this.handleClick}>Sign Up</Button>
             </Col>
           </FormGroup>
         </Form>

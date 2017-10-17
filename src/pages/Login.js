@@ -8,7 +8,43 @@ import {
   ControlLabel,
   FormControl
 } from "react-bootstrap";
+import * as firebase from "firebase";
 export default class Login extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      errorCode: "",
+      errorMessage: "",
+      email: "",
+      password: "",
+      user: ""
+    };
+  }
+  handleClick = () => {
+    const { email, password } = this.state;
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(user => {
+        this.setState({ user: firebase.auth().currentUser });
+        console.log(this.state.user);
+        this.props.router.push("/");
+      })
+      .catch(error => {
+        // Handle Errors here.
+        this.setState({ errorCode: error.code });
+        this.setState({ errorMessage: error.message });
+        // ...
+        console.log("no no no ");
+      });
+  };
+  handleChange = event => {
+    this.setState({
+      [event.target.type]: event.target.value
+    });
+  };
+
   render() {
     return (
       <div>
@@ -18,7 +54,11 @@ export default class Login extends Component {
               Email
             </Col>
             <Col sm={10}>
-              <FormControl type="email" placeholder="Email" />
+              <FormControl
+                type="email"
+                placeholder="Email"
+                onChange={this.handleChange}
+              />
             </Col>
           </FormGroup>
 
@@ -27,7 +67,11 @@ export default class Login extends Component {
               Password
             </Col>
             <Col sm={10}>
-              <FormControl type="password" placeholder="Password" />
+              <FormControl
+                type="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+              />
             </Col>
           </FormGroup>
 
@@ -39,7 +83,7 @@ export default class Login extends Component {
 
           <FormGroup>
             <Col smOffset={2} sm={10}>
-              <Button>Sign in</Button>
+              <Button onClick={this.handleClick}>Sign in</Button>
             </Col>
           </FormGroup>
         </Form>
