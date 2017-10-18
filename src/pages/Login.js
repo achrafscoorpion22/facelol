@@ -57,9 +57,11 @@ export default class Login extends Component {
         <Form horizontal >
         
           <FormGroup controlId="formHorizontalEmail">
-            <Col componentClass={ControlLabel} sm={2}>
-              Email
+          <Col componentClass={ControlLabel} sm={2}>
+            Email
+
             </Col> 
+          
             <Col sm={10}>
               <FormControl
                 type="email"
@@ -74,6 +76,7 @@ export default class Login extends Component {
             <Col componentClass={ControlLabel} sm={2}>
               Password
             </Col>
+           
             <Col sm={10}>
               <FormControl
                 type="password"
