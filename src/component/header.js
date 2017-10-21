@@ -14,13 +14,12 @@ export default class Header extends Component {
     super(props);
 
     this.state = {
-      user: firebase.auth().currentUser,
       userid: ""
     };
   }
   componentWillMount() {
     if (this.state.user) {
-      this.setState({ userid: "profile/" + this.state.user.uid });
+      this.setState({ userid: "profile/" + firebase.auth().currentUser.uid });
     }
   }
 

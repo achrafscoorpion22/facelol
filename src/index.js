@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+
 import * as firebase from "firebase";
 var config = {
   apiKey: "AIzaSyBF6Ptm1m37hCrfVp_82fjeS1qLnAEJH9A",
@@ -17,7 +18,9 @@ var config = {
   storageBucket: "facelol-9b4ff.appspot.com",
   messagingSenderId: "286974022400"
 };
+
 firebase.initializeApp(config);
+
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>

@@ -1,16 +1,15 @@
 .body2 {
-
   background: #ddd url(../src/lol.jpg) no-repeat center top;
   font-weight: 300;
   font-size: 15px;
-  color: rgb(3, 3, 3);
+  color: rgb(255, 255, 255);
   font-weight: 300;
   font-size: 15px;
   -webkit-font-smoothing: antialiased;
- 
+
   overflow-x: hidden;
 
-  -webkit-background-size: cover;
+  -webkit-backgro: cover;
   -moz-background-size: cover;
   background-size: cover;
 }
