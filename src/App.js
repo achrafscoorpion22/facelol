@@ -4,14 +4,11 @@ import * as firebase from "firebase";
 import "./App.css";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    firebase.auth().onAuthStateChanged(user => {
-      if (!user) {
-        this.props.router.push("/login");
-      }
-    });
-  }
+  componentWillMount = () => {
+    if (!firebase.auth().currentUser) {
+      this.props.router.push("/login");
+    }
+  };
 
   render() {
     return (
