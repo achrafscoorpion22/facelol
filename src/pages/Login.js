@@ -8,6 +8,7 @@ import {
   ControlLabel,
   FormControl
 } from "react-bootstrap";
+import { Link } from "react-router";
 import * as firebase from "firebase";
 export default class Login extends Component {
   constructor(props) {
@@ -60,6 +61,7 @@ export default class Login extends Component {
           <Col componentClass={ControlLabel} sm={2}>
             Email
 
+<<<<<<< HEAD
             </Col> 
           
             <Col sm={10}>
@@ -101,6 +103,43 @@ export default class Login extends Component {
           </FormGroup>
         </Form>
       </div>
+=======
+            <FormGroup controlId="formHorizontalPassword ">
+              <Col componentClass={ControlLabel} sm={2}>
+                Password
+              </Col>
+              <Col sm={10}>
+                <FormControl
+                  type="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                />
+              </Col>
+            </FormGroup>
+            <br />
+
+            <FormGroup>
+              <Col smOffset={2} sm={10}>
+                <Checkbox>Remember me?</Checkbox>
+              </Col>
+            </FormGroup>
+            <br />
+            <br />
+            <FormGroup>
+              <Col smOffset={2} sm={10}>
+                <Button className="form-5" onClick={this.handleClick}>
+                  {" "}
+                  Sign in
+                </Button>
+              </Col>
+            </FormGroup>
+          </Form>
+        </div>
+
+        <Link to="/SignUp">
+          <Button className="form-5">Sign up</Button>
+        </Link>
+>>>>>>> 6c2a755845d89a8549d9a0f0db8971c1e5f2584d
       </div>
     );
   }
