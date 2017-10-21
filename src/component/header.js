@@ -17,10 +17,8 @@ export default class Header extends Component {
       userid: ""
     };
   }
-  componentWillMount() {
-    if (this.state.user) {
-      this.setState({ userid: "profile/" + firebase.auth().currentUser.uid });
-    }
+  componentDidMount() {
+    this.setState({ userid: "profile/" + firebase.auth().currentUser.uid });
   }
 
   render() {

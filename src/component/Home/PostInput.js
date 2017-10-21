@@ -26,7 +26,7 @@ export default class PostInput extends Component {
       .collection("posts")
       .add({
         statu: this.state.value,
-        nbrike: 0,
+        nbrlike: 0,
         user: firebase.auth().currentUser.uid,
         date: new Date()
       })
