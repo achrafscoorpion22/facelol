@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-
+import requireAuthentication from "./component/required";
 import * as firebase from "firebase";
 var config = {
   apiKey: "AIzaSyBF6Ptm1m37hCrfVp_82fjeS1qLnAEJH9A",
@@ -23,7 +23,7 @@ firebase.initializeApp(config);
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={App}>
+    <Route path="/" component={requireAuthentication(App)}>
       <IndexRoute component={Home} />
       <Route path="profile/:id" component={Profile} />
     </Route>
