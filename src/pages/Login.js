@@ -8,6 +8,7 @@ import {
   ControlLabel,
   FormControl
 } from "react-bootstrap";
+import { Link } from "react-router";
 import * as firebase from "firebase";
 export default class Login extends Component {
   constructor(props) {
@@ -99,6 +100,10 @@ export default class Login extends Component {
             </FormGroup>
           </Form>
         </div>
+
+        <Link to="/SignUp">
+          <Button className="form-5">Sign up</Button>
+        </Link>
       </div>
     );
   }
