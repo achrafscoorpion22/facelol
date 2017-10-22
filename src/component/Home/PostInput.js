@@ -6,6 +6,7 @@ import {
   Button,
   Checkbox,
   ControlLabel,
+  Thumbnail,
   FormControl
 } from "react-bootstrap";
 import * as firebase from "firebase";
@@ -50,6 +51,13 @@ export default class PostInput extends Component {
         <Button bsStyle="link" onClick={this.handleAdd}>
           Add
         </Button>
+        <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+          <h3>achraf</h3>
+          <p>statu</p>
+          <p>
+            <Button bsStyle="primary">55 likes</Button>&nbsp;
+          </p>
+        </Thumbnail>
       </div>
     );
   }
