@@ -52,7 +52,11 @@ export default class Login extends Component {
         <div className="form-1">
           <br />
           <br />
+<<<<<<< HEAD
           <h1 className="form-2"> Shadow Login Form </h1>
+=======
+          <h1 className="form-2"> Sign in </h1>
+>>>>>>> 2e5c754028d74b9412052b6395022ba17dda3aaa
           <br />
           <br />
           <Form horizontal>
@@ -60,6 +64,7 @@ export default class Login extends Component {
               <Col componentClass={ControlLabel} sm={2}>
                 Email
               </Col>
+<<<<<<< HEAD
 
               <Col sm={10}>
                 <FormControl
@@ -72,6 +77,19 @@ export default class Login extends Component {
             <br />
 
             <FormGroup controlId="formHorizontalPassword">
+=======
+              <Col sm={10}>
+                <FormControl
+                  type="email"
+                  placeholder="Email"
+                  onChange={this.handleChange}
+                />
+              </Col>
+            </FormGroup>
+            <br />
+
+            <FormGroup controlId="formHorizontalPassword ">
+>>>>>>> 2e5c754028d74b9412052b6395022ba17dda3aaa
               <Col componentClass={ControlLabel} sm={2}>
                 Password
               </Col>
@@ -103,6 +121,13 @@ export default class Login extends Component {
             </FormGroup>
           </Form>
         </div>
+<<<<<<< HEAD
+=======
+
+        <Link to="/SignUp">
+          <Button className="form-5">Sign up</Button>
+        </Link>
+>>>>>>> 2e5c754028d74b9412052b6395022ba17dda3aaa
       </div>
     );
   }
