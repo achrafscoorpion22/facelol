@@ -48,66 +48,34 @@ export default class Login extends Component {
 
   render() {
     return (
-     <div className="body2">
-      <div className="form-1">
-      <br/>
-      <br/>
-        <h1 className="form-2">  Shadow Login Form </h1>
-        <br/>
-        <br/>
-        <Form horizontal >
-        
-          <FormGroup controlId="formHorizontalEmail">
-          <Col componentClass={ControlLabel} sm={2}>
-            Email
+      <div className="body2">
+        <div className="form-1">
+          <br />
+          <br />
+          <h1 className="form-2"> Shadow Login Form </h1>
+          <br />
+          <br />
+          <Form horizontal>
+            <FormGroup controlId="formHorizontalEmail">
+              <Col componentClass={ControlLabel} sm={2}>
+                Email
+              </Col>
 
-<<<<<<< HEAD
-            </Col> 
-          
-            <Col sm={10}>
-              <FormControl
-                type="email"
-                placeholder="Email"
-                onChange={this.handleChange}
-              />
-            </Col>
-          </FormGroup>
-          <br/>
-      
-          <FormGroup controlId="formHorizontalPassword">
-            <Col componentClass={ControlLabel} sm={2}>
-              Password
-            </Col>
-           
-            <Col sm={10}>
-              <FormControl
-                type="password"
-                placeholder="Password"
-                onChange={this.handleChange}
-              />
-            </Col>
-          </FormGroup>
-          <br/>
-        
-          <FormGroup>
-            <Col smOffset={2} sm={10}>
-              <Checkbox>Remember me</Checkbox>
-            </Col>
-          </FormGroup>
-          <br/>
-          <br/>
-          <FormGroup>
-            <Col smOffset={2} sm={10}>
-              <Button className="form-5" onClick={this.handleClick} >  Sign in</Button>
-            </Col>
-          </FormGroup>
-        </Form>
-      </div>
-=======
-            <FormGroup controlId="formHorizontalPassword ">
+              <Col sm={10}>
+                <FormControl
+                  type="email"
+                  placeholder="Email"
+                  onChange={this.handleChange}
+                />
+              </Col>
+            </FormGroup>
+            <br />
+
+            <FormGroup controlId="formHorizontalPassword">
               <Col componentClass={ControlLabel} sm={2}>
                 Password
               </Col>
+
               <Col sm={10}>
                 <FormControl
                   type="password"
@@ -120,7 +88,7 @@ export default class Login extends Component {
 
             <FormGroup>
               <Col smOffset={2} sm={10}>
-                <Checkbox>Remember me?</Checkbox>
+                <Checkbox>Remember me</Checkbox>
               </Col>
             </FormGroup>
             <br />
@@ -135,11 +103,6 @@ export default class Login extends Component {
             </FormGroup>
           </Form>
         </div>
-
-        <Link to="/SignUp">
-          <Button className="form-5">Sign up</Button>
-        </Link>
->>>>>>> 6c2a755845d89a8549d9a0f0db8971c1e5f2584d
       </div>
     );
   }
