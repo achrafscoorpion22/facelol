@@ -6,6 +6,7 @@ import {
   Button,
   Checkbox,
   ControlLabel,
+  Thumbnail,
   FormControl
 } from "react-bootstrap";
 import * as firebase from "firebase";
@@ -31,7 +32,26 @@ export default class PostInput extends Component {
         date: new Date()
       })
       .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
+       // console.log("Document written with ID: ", docRef.id);
+
+       firebase
+       .firestore()
+       .collection("home")
+       .add({
+         postid: docRef.id,
+         userid: firebase.auth().currentUser.uid,
+         
+       })
+       .then(function(docRef) {
+        // console.log("Document written with ID: ", docRef.id);
+ 
+         
+ 
+       })
+       .catch(function(error) {
+         console.error("Error adding document: ", error);
+       });
+
       })
       .catch(function(error) {
         console.error("Error adding document: ", error);
@@ -50,6 +70,13 @@ export default class PostInput extends Component {
         <Button bsStyle="link" onClick={this.handleAdd}>
           Add
         </Button>
+        <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+          <h3>achraf</h3>
+          <p>statu</p>
+          <p>
+            <Button bsStyle="primary">55 likes</Button>&nbsp;
+          </p>
+        </Thumbnail>
       </div>
     );
   }
