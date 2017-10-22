@@ -57,10 +57,8 @@ export default class Login extends Component {
           <br />
           <Form horizontal>
             <FormGroup controlId="formHorizontalEmail">
-              <Col componentClass={ControlLabel} sm={2}>
-                Email
-              </Col>
-              <Col sm={10}>
+              <Col sm={12}>Email</Col>
+              <Col sm={12}>
                 <FormControl
                   type="email"
                   placeholder="Email"
@@ -71,11 +69,9 @@ export default class Login extends Component {
             <br />
 
             <FormGroup controlId="formHorizontalPassword ">
-              <Col componentClass={ControlLabel} sm={2}>
-                Password
-              </Col>
+              <Col sm={12}>Password</Col>
 
-              <Col sm={10}>
+              <Col sm={12}>
                 <FormControl
                   type="password"
                   placeholder="Password"
@@ -86,26 +82,27 @@ export default class Login extends Component {
             <br />
 
             <FormGroup>
-              <Col smOffset={2} sm={10}>
+              <Col sm={12}>
                 <Checkbox>Remember me</Checkbox>
               </Col>
             </FormGroup>
             <br />
             <br />
             <FormGroup>
-              <Col smOffset={2} sm={10}>
+              <Col sm={12}>
                 <Button className="form-5" onClick={this.handleClick}>
                   {" "}
                   Sign in
                 </Button>
               </Col>
+              <Col sm={12}>
+                <Link to="/SignUp">
+                  <Button className="form-5">Sign up</Button>
+                </Link>
+              </Col>
             </FormGroup>
           </Form>
         </div>
-
-        <Link to="/SignUp">
-          <Button className="form-5">Sign up</Button>
-        </Link>
       </div>
     );
   }
