@@ -22,6 +22,27 @@ export default class Profile extends Component {
   <a href="#"><i>photo</i></a>
     </div>
 </div>
+<div class="chat-sidebar">
+            <div class="sidebar-name">          
+                <a href="javascript:register_popup('souhaib-eljaziri', 'Souhaib Eljaziri');">
+                    <img width="30" height="30" src="https://scontent.ftun2-1.fna.fbcdn.net/v/t1.0-9/21231643_1653978394653576_3776291800751053715_n.jpg?oh=93d1b065bfc948c4a4c17e0557e99f2b&oe=5A6E29F6" alt="Profile image example" />
+                    <span>Souhaib Eljaziri</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_popup('achraf', 'Arrami');">
+                    <img width="30" height="30" src="https://scontent.ftun3-1.fna.fbcdn.net/v/t1.0-9/10406885_812175115484323_1447076135505654561_n.jpg?oh=aae1129c0afe2922ad13f32cecdf4ef1&oe=5A84D7FC" />
+                    <span>Achraf Arrami</span>
+                </a>
+            </div>
+            <div class="sidebar-name">
+                <a href="javascript:register_popup('Ô Màr', 'BôRji');">
+                    <img width="30" height="30" src="https://scontent.ftun3-1.fna.fbcdn.net/v/t1.0-9/22228130_1568400853224229_6877345719220076839_n.jpg?oh=d7161548d757c3246d558262f9a496b9&oe=5A6C5501" />
+                    <span>Ô Màr BôRji</span>
+                </a>
+            </div>
+           
+        </div>
 </div>
     );
   }
