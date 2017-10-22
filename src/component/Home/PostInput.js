@@ -4,9 +4,9 @@ import {
   Col,
   FormGroup,
   Button,
-  Checkbox,
-  ControlLabel,
-  Thumbnail,
+  Tabs,
+  Tab,
+  Well,
   FormControl
 } from "react-bootstrap";
 import * as firebase from "firebase";
@@ -14,7 +14,8 @@ import "firebase/firestore";
 
 export default class PostInput extends Component {
   state = {
-    value: ""
+    value: "",
+    type: "text"
   };
 
   handleChange = e => {
@@ -26,58 +27,66 @@ export default class PostInput extends Component {
       .firestore()
       .collection("posts")
       .add({
-        statu: this.state.value,
-        nbrlike: 0,
-        user: firebase.auth().currentUser.uid,
+        content: this.state.value,
+        likes: 0,
+        type: this.state.type,
+        userid: firebase.auth().currentUser.uid,
         date: new Date()
       })
       .then(function(docRef) {
-       // console.log("Document written with ID: ", docRef.id);
-
-       firebase
-       .firestore()
-       .collection("home")
-       .add({
-         postid: docRef.id,
-         userid: firebase.auth().currentUser.uid,
-         
-       })
-       .then(function(docRef) {
-        // console.log("Document written with ID: ", docRef.id);
- 
-         
- 
-       })
-       .catch(function(error) {
-         console.error("Error adding document: ", error);
-       });
-
+        this.setState({ value: "" });
       })
       .catch(function(error) {
         console.error("Error adding document: ", error);
       });
   };
-
+  handleTab = type => {
+    this.setState({ type });
+  };
   render() {
     return (
-      <div>
-        <FormControl
-          type="text"
-          value={this.state.value}
-          placeholder="Enter text"
-          onChange={this.handleChange}
-        />
-        <Button bsStyle="link" onClick={this.handleAdd}>
-          Add
+      <Well>
+        <Tabs
+          defaultActiveKey={"text"}
+          id="uncontrolled-tab-example"
+          onSelect={this.handleTab}
+        >
+          <Tab eventKey={"text"} title="Text">
+            <FormGroup controlId="formControlsTextarea">
+              <FormControl
+                componentClass="textarea"
+                placeholder="What are you thinking about"
+                value={this.state.value}
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+          </Tab>
+          <Tab eventKey={"video"} title="Video">
+            <FormGroup>
+              <FormControl
+                type="textarea"
+                value={this.state.value}
+                placeholder="Enter video url"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+          </Tab>
+          <Tab eventKey={"photo"} title="Photo">
+            <FormControl type="file" placeholder="Upload your ugly face" />
+          </Tab>
+        </Tabs>
+        <FormGroup>
+          <FormControl
+            type="text"
+            value={this.state.value}
+            placeholder="Add some tags to your shit"
+            onChange={this.handleChange}
+          />
+        </FormGroup>
+        <Button bsStyle="primary" type="submit" onClick={this.handleAdd}>
+          Add Post
         </Button>
-        <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-          <h3>achraf</h3>
-          <p>statu</p>
-          <p>
-            <Button bsStyle="primary">55 likes</Button>&nbsp;
-          </p>
-        </Thumbnail>
-      </div>
+      </Well>
     );
   }
 }

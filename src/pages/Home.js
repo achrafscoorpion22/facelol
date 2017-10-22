@@ -1,34 +1,31 @@
 import React, { Component } from "react";
 import * as firebase from "firebase";
 import PostInput from "../component/Home/PostInput";
+import Posts from "../component/Home/Posts";
+import LeftMenu from "../component/Home/LeftMenu";
+import {
+  Row,
+  Col,
+  FormGroup,
+  Button,
+  Checkbox,
+  ControlLabel,
+  FormControl
+} from "react-bootstrap";
 
 export default class Home extends Component {
-  state={
-      chedli:""
-  }
-  componentWillMount = () => {
-    firebase
-      .firestore()
-      .collection("posts")
-      .get()
-      .then(querry => {
-        querry.forEach(doc => {
-          if(doc.data().user==="8QT69sh719OfkUdhfPERXad0SZg1"){this.setState({chedli:doc.data().statu})
-                                                  {this.state.chedli}        }
-        });
-      });
-
-
-
-
-  };
-
   render() {
     return (
-      <div>
-        <PostInput />
-        
-      </div>
+      <Row>
+        <Col sm={2}>
+          <LeftMenu />
+        </Col>
+        <Col sm={6}>
+          <PostInput />
+          <Posts />
+        </Col>
+        <Col sm={2} />
+      </Row>
     );
   }
 }

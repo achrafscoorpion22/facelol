@@ -6,9 +6,9 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="app">
         <Header />
-        {this.props.children}
+        <div className="children">{this.props.children}</div>
       </div>
     );
   }
