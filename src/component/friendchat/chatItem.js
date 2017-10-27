@@ -59,13 +59,19 @@ export default class ChatItem extends Component {
         <div class="wrapper">
         <div class="phone-containter">
         <div id="phone" class="phone">
+        
         <Modal.Header>       
-   
+        <header>
+        <span class="left1">
+        <Image style={imgstyle} src={"https://orig00.deviantart.net/8078/f/2013/336/5/d/league_of_legends_icon_by_theman4556-d6wic5y.png"} circle thumbnail/>
+        </span>
+         {this.props.name } 
+        <span class="right1">
         <Button bsSize="small" class="send-btn"  onClick={this.handleClose.bind(this) }><Glyphicon glyph="remove" /> </Button>
         <Button bsSize="small" class="send-btn"  onClick={this.handleMinimize.bind(this) }><Glyphicon glyph="minus" /> </Button>
-         <Image style={imgstyle} src={"https://orig00.deviantart.net/8078/f/2013/336/5/d/league_of_legends_icon_by_theman4556-d6wic5y.png"} circle thumbnail/>
-{this.props.name} 
-   
+        </span>
+        
+         </header>
       </Modal.Header>
       </div>
       <div id="phone" class="phone">
@@ -75,8 +81,6 @@ export default class ChatItem extends Component {
         this.state.isShow &&
         <div>
           <Modal.Body>
-        
-          
             {
               this.state.messages.map((onemes)=>{
                 return <div class="message right"><div class="message-text"><p key={onemes.id}> {onemes} </p> </div></div>
