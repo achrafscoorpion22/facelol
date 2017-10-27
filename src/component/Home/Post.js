@@ -11,6 +11,9 @@ import {
 } from "react-bootstrap";
 
 export default class Post extends Component {
+  function(){
+    this.props.data.likes++;
+  }
   render() {
     return (
       <Well>
@@ -29,7 +32,7 @@ export default class Post extends Component {
           />
         )}
         <p>
-          <Button bsStyle="primary">{this.props.data.likes} likes</Button>&nbsp;
+          <Button bsStyle="primary" onClick="function()">{this.props.data.likes} likes</Button>&nbsp;
         </p>
       </Well>
     );
