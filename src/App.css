@@ -359,13 +359,14 @@ body {
   padding: 1%
 }
 .wrapper {
-  width: 612px;
+  width: 100%;
   height: 100%;
+
   margin: 0 auto;
 }
 
 .phone-containter {
-  width: 340px;
+  width:100%;
   height: 100%;
 }
 .phone {

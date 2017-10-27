@@ -59,17 +59,17 @@ export default class ChatItem extends Component {
         <div class="wrapper">
         <div class="phone-containter">
         <div id="phone" class="phone">
-                   
-      <Modal.Header> <Image style={imgstyle} src={"https://orig00.deviantart.net/8078/f/2013/336/5/d/league_of_legends_icon_by_theman4556-d6wic5y.png"} circle thumbnail/>
-{this.props.name} 
+        <Modal.Header>       
+   
         <Button bsSize="small" class="send-btn"  onClick={this.handleClose.bind(this) }><Glyphicon glyph="remove" /> </Button>
         <Button bsSize="small" class="send-btn"  onClick={this.handleMinimize.bind(this) }><Glyphicon glyph="minus" /> </Button>
-        
+         <Image style={imgstyle} src={"https://orig00.deviantart.net/8078/f/2013/336/5/d/league_of_legends_icon_by_theman4556-d6wic5y.png"} circle thumbnail/>
+{this.props.name} 
    
       </Modal.Header>
       </div>
       <div id="phone" class="phone">
-      <div class="message left"><div class="message-text">hi {this.props.name} !
+      <div class="message left"><div class="message-text">hi !
     </div></div>
       {
         this.state.isShow &&
